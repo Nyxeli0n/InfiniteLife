@@ -1,0 +1,332 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FFBD566FA2CEAA5B1170BF8E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88335502E732D5D4C319A6B8 /* main.swift */; };
+		E6A0716FA8C662371B14B214 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22536531636B1E49329A39F3 /* AppDelegate.swift */; };
+		FBEE67DAE7637DE7585000AD /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67973F8295B43FC15F733B03 /* AppSettings.swift */; };
+		A5CB45FC6EBEF7E7D478D34B /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53232571AE3C5BED1887224 /* SettingsStore.swift */; };
+		11EB7D03B41FC58E87DE9ED8 /* SimulationEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4F8D5C48A9D011BECDE379 /* SimulationEngine.swift */; };
+		A22904969F32B4B2F6251478 /* WorldSeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81168D1C113E885D8FFA89CF /* WorldSeed.swift */; };
+		1EB31957A5F3830DEF868F1C /* RandomGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2A81AE100822EFA0610B5C /* RandomGenerator.swift */; };
+		727CD565B994BE0AF90E543B /* PatternLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848857521CFA5D4D52070959 /* PatternLibrary.swift */; };
+		7C5A98EFBBF47F41F4B5BD7D /* Chunk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5039A2F34EA7A2997B72DF92 /* Chunk.swift */; };
+		1C48B604B7BE24D7A1D631CD /* CellularAutomata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AFB57AD11B34BBDAFF629D /* CellularAutomata.swift */; };
+		4A7DB48B932DFF5DA99BEB8B /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BDEE9F8576B47CAE3E1F58 /* CameraController.swift */; };
+		2CD4DED3426DFAD18F01E183 /* ActivityMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3F09016A3BD0F0E7BB9637 /* ActivityMonitor.swift */; };
+		665431A963E1E884C69ADE4B /* ChunkWorld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CB64A4D15C47AD8FB786FA /* ChunkWorld.swift */; };
+		E8405BD61E00F5963812962A /* MetalShaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257536EC0A7B40A06D792471 /* MetalShaders.swift */; };
+		7A55BCBBCE122F8BAB71C684 /* MetalRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287F7D5B87BBD4940B8FF00B /* MetalRenderer.swift */; };
+		1CEDE01475F898649DE6A3F2 /* WallpaperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0717C7D51074A08DE80CB4C /* WallpaperView.swift */; };
+		54B394F3AE68F09545C35C82 /* WallpaperWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9B4DC3652B05F6C3ADE735 /* WallpaperWindow.swift */; };
+		80601D4FFE039261B8EBC0B0 /* WallpaperManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82513B179E44F4A6BAC2FBAD /* WallpaperManager.swift */; };
+		4083DA2043CDBEA0C5AA0A15 /* PowerMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F76C467FE83C67DF99E83C /* PowerMonitor.swift */; };
+		8706F7659CF22D5D41349B96 /* LaunchAtLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95309524275BAF39A1A5CC63 /* LaunchAtLoginManager.swift */; };
+		833D35450AF618E6F21831FC /* StatusBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45CB0035A97324FD6C25266 /* StatusBarController.swift */; };
+		A9B7EB0FFFC6560FC6E51545 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B58D3B4C55725D997CD4B59 /* PreferencesViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		88335502E732D5D4C319A6B8 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		22536531636B1E49329A39F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		67973F8295B43FC15F733B03 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		C53232571AE3C5BED1887224 /* SettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
+		EC4F8D5C48A9D011BECDE379 /* SimulationEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulationEngine.swift; sourceTree = "<group>"; };
+		81168D1C113E885D8FFA89CF /* WorldSeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldSeed.swift; sourceTree = "<group>"; };
+		8F2A81AE100822EFA0610B5C /* RandomGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomGenerator.swift; sourceTree = "<group>"; };
+		848857521CFA5D4D52070959 /* PatternLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternLibrary.swift; sourceTree = "<group>"; };
+		5039A2F34EA7A2997B72DF92 /* Chunk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chunk.swift; sourceTree = "<group>"; };
+		10AFB57AD11B34BBDAFF629D /* CellularAutomata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellularAutomata.swift; sourceTree = "<group>"; };
+		72BDEE9F8576B47CAE3E1F58 /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
+		8D3F09016A3BD0F0E7BB9637 /* ActivityMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityMonitor.swift; sourceTree = "<group>"; };
+		37CB64A4D15C47AD8FB786FA /* ChunkWorld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChunkWorld.swift; sourceTree = "<group>"; };
+		257536EC0A7B40A06D792471 /* MetalShaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalShaders.swift; sourceTree = "<group>"; };
+		287F7D5B87BBD4940B8FF00B /* MetalRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalRenderer.swift; sourceTree = "<group>"; };
+		D0717C7D51074A08DE80CB4C /* WallpaperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperView.swift; sourceTree = "<group>"; };
+		4C9B4DC3652B05F6C3ADE735 /* WallpaperWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperWindow.swift; sourceTree = "<group>"; };
+		82513B179E44F4A6BAC2FBAD /* WallpaperManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperManager.swift; sourceTree = "<group>"; };
+		48F76C467FE83C67DF99E83C /* PowerMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerMonitor.swift; sourceTree = "<group>"; };
+		95309524275BAF39A1A5CC63 /* LaunchAtLoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAtLoginManager.swift; sourceTree = "<group>"; };
+		D45CB0035A97324FD6C25266 /* StatusBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarController.swift; sourceTree = "<group>"; };
+		2B58D3B4C55725D997CD4B59 /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
+		5FBEB80C30C991585E72BD3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F0BC6F7163AE0C82A2B38C6 /* InfiniteLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InfiniteLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		99748FFADDD249F0C7C7D79E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		914DE73985432AAFB2DA4D16 = {
+			isa = PBXGroup;
+			children = (
+				4C89488137E8E4ED805FA0F7 /* InfiniteLife */,
+				4DDA0B90ACA187FF57E9F0B2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4C89488137E8E4ED805FA0F7 /* InfiniteLife */ = {
+			isa = PBXGroup;
+			children = (
+				88335502E732D5D4C319A6B8 /* main.swift */,
+				22536531636B1E49329A39F3 /* AppDelegate.swift */,
+				67973F8295B43FC15F733B03 /* AppSettings.swift */,
+				C53232571AE3C5BED1887224 /* SettingsStore.swift */,
+				EC4F8D5C48A9D011BECDE379 /* SimulationEngine.swift */,
+				5FBEB80C30C991585E72BD3B /* Info.plist */,
+				C5290DDDF8DB68C89531FE2A /* World */,
+				9B458F517517C02CD6F51686 /* Rendering */,
+				1E9246D8524D4573B9D2B451 /* System */,
+				31D9A9766E982399CE6CB307 /* UI */,
+			);
+			path = InfiniteLife;
+			sourceTree = "<group>";
+		};
+		4DDA0B90ACA187FF57E9F0B2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8F0BC6F7163AE0C82A2B38C6 /* InfiniteLife.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C5290DDDF8DB68C89531FE2A /* World */ = {
+			isa = PBXGroup;
+			children = (
+				81168D1C113E885D8FFA89CF /* WorldSeed.swift */,
+				8F2A81AE100822EFA0610B5C /* RandomGenerator.swift */,
+				848857521CFA5D4D52070959 /* PatternLibrary.swift */,
+				5039A2F34EA7A2997B72DF92 /* Chunk.swift */,
+				10AFB57AD11B34BBDAFF629D /* CellularAutomata.swift */,
+				72BDEE9F8576B47CAE3E1F58 /* CameraController.swift */,
+				8D3F09016A3BD0F0E7BB9637 /* ActivityMonitor.swift */,
+				37CB64A4D15C47AD8FB786FA /* ChunkWorld.swift */,
+			);
+			path = World;
+			sourceTree = "<group>";
+		};
+		9B458F517517C02CD6F51686 /* Rendering */ = {
+			isa = PBXGroup;
+			children = (
+				257536EC0A7B40A06D792471 /* MetalShaders.swift */,
+				287F7D5B87BBD4940B8FF00B /* MetalRenderer.swift */,
+				D0717C7D51074A08DE80CB4C /* WallpaperView.swift */,
+			);
+			path = Rendering;
+			sourceTree = "<group>";
+		};
+		1E9246D8524D4573B9D2B451 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				4C9B4DC3652B05F6C3ADE735 /* WallpaperWindow.swift */,
+				82513B179E44F4A6BAC2FBAD /* WallpaperManager.swift */,
+				48F76C467FE83C67DF99E83C /* PowerMonitor.swift */,
+				95309524275BAF39A1A5CC63 /* LaunchAtLoginManager.swift */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
+		31D9A9766E982399CE6CB307 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				D45CB0035A97324FD6C25266 /* StatusBarController.swift */,
+				2B58D3B4C55725D997CD4B59 /* PreferencesViewController.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F71BA634E6966628FA2086D4 /* InfiniteLife */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8405B72F0C9F5C1E1D114332 /* Build configuration list for PBXNativeTarget "InfiniteLife" */;
+			buildPhases = (
+				651908AA895CC19CDC7D3C42 /* Sources */,
+				99748FFADDD249F0C7C7D79E /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = InfiniteLife;
+			productName = InfiniteLife;
+			productReference = 8F0BC6F7163AE0C82A2B38C6 /* InfiniteLife.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3E9B17342DF73325A1287C21 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					F71BA634E6966628FA2086D4 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = 40D5656D6D9E4AE9F5B78428 /* Build configuration list for PBXProject "InfiniteLife" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 914DE73985432AAFB2DA4D16;
+			productRefGroup = 4DDA0B90ACA187FF57E9F0B2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F71BA634E6966628FA2086D4 /* InfiniteLife */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		651908AA895CC19CDC7D3C42 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFBD566FA2CEAA5B1170BF8E /* main.swift in Sources */,
+				E6A0716FA8C662371B14B214 /* AppDelegate.swift in Sources */,
+				FBEE67DAE7637DE7585000AD /* AppSettings.swift in Sources */,
+				A5CB45FC6EBEF7E7D478D34B /* SettingsStore.swift in Sources */,
+				11EB7D03B41FC58E87DE9ED8 /* SimulationEngine.swift in Sources */,
+				A22904969F32B4B2F6251478 /* WorldSeed.swift in Sources */,
+				1EB31957A5F3830DEF868F1C /* RandomGenerator.swift in Sources */,
+				727CD565B994BE0AF90E543B /* PatternLibrary.swift in Sources */,
+				7C5A98EFBBF47F41F4B5BD7D /* Chunk.swift in Sources */,
+				1C48B604B7BE24D7A1D631CD /* CellularAutomata.swift in Sources */,
+				4A7DB48B932DFF5DA99BEB8B /* CameraController.swift in Sources */,
+				2CD4DED3426DFAD18F01E183 /* ActivityMonitor.swift in Sources */,
+				665431A963E1E884C69ADE4B /* ChunkWorld.swift in Sources */,
+				E8405BD61E00F5963812962A /* MetalShaders.swift in Sources */,
+				7A55BCBBCE122F8BAB71C684 /* MetalRenderer.swift in Sources */,
+				1CEDE01475F898649DE6A3F2 /* WallpaperView.swift in Sources */,
+				54B394F3AE68F09545C35C82 /* WallpaperWindow.swift in Sources */,
+				80601D4FFE039261B8EBC0B0 /* WallpaperManager.swift in Sources */,
+				4083DA2043CDBEA0C5AA0A15 /* PowerMonitor.swift in Sources */,
+				8706F7659CF22D5D41349B96 /* LaunchAtLoginManager.swift in Sources */,
+				833D35450AF618E6F21831FC /* StatusBarController.swift in Sources */,
+				A9B7EB0FFFC6560FC6E51545 /* PreferencesViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		3537BA3EE588D668BB649021 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F8BCE59D6D53BDA327230EBB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		23ED5EEB3EE0F96CD937D2CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = InfiniteLife/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.infinitelife.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		D9087EE86A42D2301B7C7602 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = InfiniteLife/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.infinitelife.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8405B72F0C9F5C1E1D114332 /* Build configuration list for PBXNativeTarget "InfiniteLife" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				23ED5EEB3EE0F96CD937D2CF /* Debug */,
+				D9087EE86A42D2301B7C7602 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		40D5656D6D9E4AE9F5B78428 /* Build configuration list for PBXProject "InfiniteLife" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3537BA3EE588D668BB649021 /* Debug */,
+				F8BCE59D6D53BDA327230EBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3E9B17342DF73325A1287C21 /* Project object */;
+}
