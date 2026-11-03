@@ -54,7 +54,6 @@ final class StatusBarController {
         menu.addItem(playItem)
         menu.addItem(.separator())
 
-        // 進化速度
         let evo = NSMenuItem(title: "進化速度", action: nil, keyEquivalent: "")
         let evoSub = NSMenu()
         for (title, value) in [("遅い", 8.0), ("標準", 14.0), ("速い", 20.0), ("とても速い", 24.0)] {
@@ -67,7 +66,6 @@ final class StatusBarController {
         evo.submenu = evoSub
         menu.addItem(evo)
 
-        // セル密度
         let dens = NSMenuItem(title: "セル密度", action: nil, keyEquivalent: "")
         let densSub = NSMenu()
         for (title, value) in [("少ない", 0.045), ("標準", 0.075), ("多い", 0.11)] {
@@ -80,7 +78,6 @@ final class StatusBarController {
         dens.submenu = densSub
         menu.addItem(dens)
 
-        // プリセット
         let preset = NSMenuItem(title: "プリセット", action: nil, keyEquivalent: "")
         let presetSub = NSMenu()
         for p in EvolutionPreset.allCases {
@@ -106,7 +103,6 @@ final class StatusBarController {
 
         menu.addItem(.separator())
 
-        // フレームレート
         let fps = NSMenuItem(title: "フレームレート上限", action: nil, keyEquivalent: "")
         let fpsSub = NSMenu()
         for limit in FrameRateLimit.allCases {
@@ -143,7 +139,6 @@ final class StatusBarController {
         statusItem.menu = menu
     }
 
-    // MARK: - 操作
 
     @objc private func toggleRun() {
         engine.toggleRunning()

@@ -152,7 +152,6 @@ final class SimulationEngine {
         recomputeTargetFPS()
     }
 
-    // MARK: - フレーム受信先（ディスプレイごとのMetalビュー）
 
     @discardableResult
     func addFrameListener(_ block: @escaping (UnsafePointer<UInt8>, Int, Int, CGFloat) -> Void) -> UUID {
@@ -179,7 +178,6 @@ final class SimulationEngine {
         listenerLock.unlock()
     }
 
-    // MARK: - ディスプレイリンク
 
     private func startDisplayLink() {
         var link: CVDisplayLink?
@@ -229,7 +227,6 @@ final class SimulationEngine {
         lastTimestamp = now
         dt = min(dt, 0.1)
 
-        // フレームレートを制限する。
         let minFrameDt = 1.0 / max(15.0, fps)
         if now - lastPublishTime < minFrameDt * 0.92 {
             return

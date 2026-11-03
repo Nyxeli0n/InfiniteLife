@@ -1,6 +1,5 @@
 import AppKit
 
-/// ディスプレイごとに壁紙ウインドウとMetalビューを管理する。
 final class WallpaperManager {
     private let engine: SimulationEngine
     private var windows: [CGDirectDisplayID: WallpaperWindow] = [:]
@@ -20,11 +19,9 @@ final class WallpaperManager {
             name: NSApplication.didChangeScreenParametersNotification,
             object: nil
         )
-        // 電源状態とFPS設定を定期確認する。
         powerTimer = Timer.scheduledTimer(withTimeInterval: 30, repeats: true) { [weak self] _ in
             self?.engine.updatePowerState()
         }
-        // Mission Controlやフルスクリーン切り替え後も背面を維持する。
         spaceTimer = Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { [weak self] _ in
             self?.refreshSpaceVisibility()
         }
@@ -79,7 +76,6 @@ final class WallpaperManager {
             views[id] = view
         }
 
-        // 接続解除されたディスプレイを削除する。
         for key in windows.keys where !live.contains(key) {
             windows[key]?.orderOut(nil)
             windows[key]?.close()

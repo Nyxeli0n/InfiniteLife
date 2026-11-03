@@ -39,7 +39,6 @@ final class ChunkWorld {
         return Array(chunks.keys)
     }
 
-    // MARK: - 手続き型生成
 
     private func generateChunk(cx: Int32, cy: Int32, density: Double) -> Chunk {
         let chunk = Chunk(cx: cx, cy: cy)
@@ -59,14 +58,11 @@ final class ChunkWorld {
         return chunk
     }
 
-    // MARK: - ストリーミング
 
-    /// `worldRect` と周辺を覆うチャンクを用意し、遠いチャンクを破棄する。
     func ensureCoverage(worldRect: CGRect, density: Double) {
         ensureCoverage(worldRects: [worldRect], density: density)
     }
 
-    /// すべての表示領域を覆うチャンクを用意し、遠いチャンクを破棄する。
     func ensureCoverage(worldRects: [CGRect], density: Double) {
         guard !worldRects.isEmpty else { return }
 
@@ -102,7 +98,6 @@ final class ChunkWorld {
 
         let effectiveMax = max(maxChunks, needed.count)
 
-        // 遠いチャンクから破棄する。
         if chunks.count > effectiveMax {
             let centerX = bounds.midX / s
             let centerY = bounds.midY / s
@@ -119,7 +114,6 @@ final class ChunkWorld {
             }
         }
 
-        // 上限を大きく超える場合は必要領域外をすべて破棄する。
         if chunks.count > effectiveMax * 2 {
             for key in Array(chunks.keys) where !needed.contains(key) {
                 chunks.removeValue(forKey: key)
@@ -127,7 +121,6 @@ final class ChunkWorld {
         }
     }
 
-    // MARK: - シミュレーション
 
     func step(density: Double) {
         lock.lock()
@@ -150,10 +143,8 @@ final class ChunkWorld {
             guard let chunk = localChunks[key],
                   let currentCells = cellSnapshots[key] else { continue }
 
-            // 世代計算用の連続領域へ、隣接チャンクの境界を複製する。
             for i in 0..<paddedSize { padded[i] = 0 }
 
-            // 内部
             for y in 0..<s {
                 let srcRow = y * s
                 let dstRow = (y + 1) * stride + 1
@@ -162,8 +153,6 @@ final class ChunkWorld {
                 }
             }
 
-            // 隣接チャンクの境界
-            // 上端と下端
             if let north = cellSnapshots[ChunkKey(x: key.x, y: key.y - 1)] {
                 let srcRow = (s - 1) * s
                 for x in 0..<s {
@@ -176,7 +165,6 @@ final class ChunkWorld {
                     padded[dstRow + x] = south[x]
                 }
             }
-            // 左端と右端
             if let west = cellSnapshots[ChunkKey(x: key.x - 1, y: key.y)] {
                 for y in 0..<s {
                     padded[(y + 1) * stride] = west[y * s + (s - 1)]
@@ -187,7 +175,6 @@ final class ChunkWorld {
                     padded[(y + 1) * stride + (s + 1)] = east[y * s]
                 }
             }
-            // 四隅
             if let nw = cellSnapshots[ChunkKey(x: key.x - 1, y: key.y - 1)] {
                 padded[0] = nw[(s - 1) * s + (s - 1)]
             }
@@ -351,9 +338,7 @@ final class ChunkWorld {
         }
     }
 
-    // MARK: - 描画データ
 
-    /// 表示領域をグレースケールの行優先バッファへ書き出す。
     func renderToBuffer(
         buffer: inout [UInt8],
         width: Int,
@@ -362,7 +347,6 @@ final class ChunkWorld {
     ) {
         guard width > 0, height > 0, buffer.count >= width * height else { return }
 
-        // バッファを初期化する。
         for i in 0..<(width * height) {
             buffer[i] = 0
         }
@@ -378,7 +362,6 @@ final class ChunkWorld {
         let sd = Double(s)
         let lut = CellularAutomata.brightnessLUT
 
-        // 表示領域と重なるチャンクの生存セルだけを書き込む。
         for (key, chunk) in snapshot {
             let chunkMinX = Double(key.x) * sd
             let chunkMinY = Double(key.y) * sd
@@ -393,7 +376,6 @@ final class ChunkWorld {
             let cells = chunk.cells
             for ly in 0..<s {
                 let worldY = chunkMinY + Double(ly) + 0.5
-                // 画面上端をワールド座標の最大Yとする。
                 let py = Int((worldRect.maxY - worldY) * invScaleY)
                 guard py >= 0, py < height else { continue }
                 let row = py * width
@@ -411,7 +393,6 @@ final class ChunkWorld {
         }
     }
 
-    // MARK: - 状態保存
 
     struct Snapshot: Codable {
         var seedHigh: UInt64

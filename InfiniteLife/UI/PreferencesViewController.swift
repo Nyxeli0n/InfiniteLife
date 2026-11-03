@@ -155,7 +155,6 @@ final class PreferencesViewController: NSViewController {
         refreshFromSettings()
     }
 
-    // MARK: - UI部品
 
     private func makeLabel(_ text: String, size: CGFloat, bold: Bool) -> NSTextField {
         let f = NSTextField(labelWithString: text)

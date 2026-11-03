@@ -13,9 +13,6 @@ SDK="$(xcrun --show-sdk-path)"
 MIN_OS="13.0"
 ARCH="$(uname -m)"
 
-echo "==> 使用するSDK: $SDK"
-echo "==> 対象アーキテクチャ: $ARCH"
-
 rm -rf "$BUILD"
 mkdir -p "$MACOS_DIR" "$RES_DIR"
 
@@ -23,8 +20,6 @@ SOURCES=()
 while IFS= read -r f; do
   SOURCES+=("$f")
 done < <(find "$SRC" -name '*.swift' | sort)
-
-echo "==> ${#SOURCES[@]}個のSwiftファイルをコンパイルしています..."
 
 cat > "$APP/Contents/Info.plist" <<'PLIST'
 <?xml version="1.0" encoding="UTF-8"?>
@@ -77,6 +72,4 @@ swiftc \
 
 echo -n "APPL????" > "$APP/Contents/PkgInfo"
 
-echo "==> ビルドが完了しました: $APP"
-echo "    アプリを開く: open \"$APP\""
-echo "    実行ファイルを直接開く: \"$MACOS_DIR/$EXECUTABLE\""
+printf '%s\n' "$APP"

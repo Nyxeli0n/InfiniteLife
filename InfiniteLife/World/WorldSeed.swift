@@ -1,7 +1,6 @@
 import Foundation
 import Security
 
-/// 実用上の重複を避けるため、2つのUInt64からなる128ビットのシードを使う。
 struct WorldSeed: Equatable, Hashable, Codable {
     var high: UInt64
     var low: UInt64
@@ -12,7 +11,6 @@ struct WorldSeed: Equatable, Hashable, Codable {
         let statusHigh = SecRandomCopyBytes(kSecRandomDefault, MemoryLayout<UInt64>.size, &high)
         let statusLow = SecRandomCopyBytes(kSecRandomDefault, MemoryLayout<UInt64>.size, &low)
         if statusHigh != errSecSuccess || statusLow != errSecSuccess {
-            // 乱数取得に失敗した場合は時刻とプロセス情報を混合する。
             let t = UInt64(Date().timeIntervalSince1970 * 1_000_000)
             high = t ^ (t << 13) ^ UInt64(ProcessInfo.processInfo.processIdentifier)
             low = t &* 0x9E3779B97F4A7C15 &+ 0xD1B54A32D192ED03
@@ -24,7 +22,6 @@ struct WorldSeed: Equatable, Hashable, Codable {
         return WorldSeed(high: high, low: low)
     }
 
-    /// シード、チャンク座標、saltを混合して64ビットのストリームシードを作る。
     func stream(chunkX: Int32, chunkY: Int32, salt: UInt64 = 0) -> UInt64 {
         var h = high ^ salt
         var l = low &+ UInt64(bitPattern: Int64(chunkX)) &* 0xC2B2AE3D27D4EB4F

@@ -1,7 +1,5 @@
 import Foundation
 
-/// セル・オートマトンの状態を保持する固定サイズのチャンク。
-/// セル値は0が死、1...255が生存期間を表す。
 final class Chunk {
     static let size: Int = 64
     static let cellCount: Int = size * size
@@ -9,12 +7,9 @@ final class Chunk {
     let cx: Int32
     let cy: Int32
 
-    /// 現在世代のバッファ。
     private(set) var cells: [UInt8]
-    /// 次世代を書き込む作業用バッファ。
     private var next: [UInt8]
 
-    /// 再投入判定に使う、誕生数と死亡数の移動平均。
     private(set) var recentActivity: Double = 0
     private(set) var liveCount: Int = 0
     private(set) var stagnantSteps: Int = 0
@@ -60,7 +55,6 @@ final class Chunk {
         liveCount = count
     }
 
-    /// パターンを配置する。生存セルだけを書き込み、既存状態と統合する。
     func stamp(pattern: PatternLibrary.Pattern, originX: Int, originY: Int, age: UInt8 = 1) {
         for py in 0..<pattern.height {
             for px in 0..<pattern.width {
@@ -78,10 +72,8 @@ final class Chunk {
         }
     }
 
-    /// 世代計算の完了後、次世代バッファを現在世代へ切り替える。
     func commitNext(activity: Int, generation: UInt64) {
         swap(&cells, &next)
-        // 活動量を指数移動平均で更新する。
         recentActivity = recentActivity * 0.85 + Double(activity) * 0.15
         if activity > 2 {
             stagnantSteps = 0
@@ -98,7 +90,6 @@ final class Chunk {
         next[index] = value
     }
 
-    // MARK: - 状態保存
 
     func encodeCells() -> Data {
         Data(cells)

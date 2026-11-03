@@ -1,6 +1,5 @@
 import AppKit
 
-/// マウス入力を遮らない、枠なしのデスクトップ階層ウインドウ。
 final class WallpaperWindow: NSWindow {
     init(screen: NSScreen) {
         let frame = screen.frame
@@ -14,7 +13,6 @@ final class WallpaperWindow: NSWindow {
     }
 
     private func configureAsDesktopWallpaper(on screen: NSScreen) {
-        // システム壁紙より上、デスクトップアイコンと通常ウインドウより下に配置する。
         let wallpaperLevel = Int(CGWindowLevelForKey(.desktopIconWindow)) - 1
         level = NSWindow.Level(rawValue: wallpaperLevel)
 
@@ -33,7 +31,6 @@ final class WallpaperWindow: NSWindow {
         isReleasedWhenClosed = false
         hidesOnDeactivate = false
         animationBehavior = .none
-        // ウインドウ一覧やMission Controlのサムネイルへの表示を抑える。
         sharingType = .readOnly
 
         setFrame(screen.frame, display: true)

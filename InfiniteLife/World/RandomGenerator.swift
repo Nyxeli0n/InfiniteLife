@@ -1,6 +1,5 @@
 import Foundation
 
-/// splitmixで初期状態を展開する、決定論的な64ビット疑似乱数生成器。
 struct RNG64 {
     private var s0: UInt64
     private var s1: UInt64

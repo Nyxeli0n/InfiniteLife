@@ -1,7 +1,6 @@
 import AppKit
 import MetalKit
 
-/// 生命場を表示するMetal描画ビュー。マウス入力は受け付けない。
 final class WallpaperView: MTKView {
     private var renderer: MetalRenderer?
     private var listenerID: UUID?
@@ -48,7 +47,6 @@ final class WallpaperView: MTKView {
     }
 
     private func onFrame(ptr: UnsafePointer<UInt8>, width: Int, height: Int) {
-        // シミュレーションスレッドで複製し、メインスレッドでGPUへ転送する。
         let count = width * height
         let data = Data(bytes: ptr, count: count)
         DispatchQueue.main.async { [weak self] in

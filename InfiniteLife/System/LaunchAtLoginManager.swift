@@ -11,7 +11,6 @@ enum LaunchAtLoginManager {
                     try SMAppService.mainApp.unregister()
                 }
             } catch {
-                // 正式なアプリバンドルとして配置されていない場合、登録に失敗することがある。
                 NSLog("InfiniteLife: ログイン時の起動設定に失敗しました: \(error.localizedDescription)")
             }
         }
