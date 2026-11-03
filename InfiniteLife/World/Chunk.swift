@@ -69,7 +69,6 @@ final class Chunk {
         next[index] = value
     }
 
-
     func encodeCells() -> Data {
         Data(cells)
     }

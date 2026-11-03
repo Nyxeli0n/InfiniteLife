@@ -11,7 +11,7 @@ enum LaunchAtLoginManager {
                     try SMAppService.mainApp.unregister()
                 }
             } catch {
-                NSLog("InfiniteLife: ログイン時の起動設定に失敗しました: \(error.localizedDescription)")
+                NSLog("InfiniteLife: Failed to configure launch at login: \(error.localizedDescription)")
             }
         }
     }

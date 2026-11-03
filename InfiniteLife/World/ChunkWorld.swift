@@ -39,7 +39,6 @@ final class ChunkWorld {
         return Array(chunks.keys)
     }
 
-
     private func generateChunk(cx: Int32, cy: Int32, density: Double) -> Chunk {
         let chunk = Chunk(cx: cx, cy: cy)
         var rng = RNG64(seed: seed.stream(chunkX: cx, chunkY: cy, salt: 0x47454E))
@@ -57,7 +56,6 @@ final class ChunkWorld {
         chunk.recountLive()
         return chunk
     }
-
 
     func ensureCoverage(worldRects: [CGRect], density: Double) {
         guard !worldRects.isEmpty else { return }
@@ -116,7 +114,6 @@ final class ChunkWorld {
             }
         }
     }
-
 
     func step(density: Double) {
         lock.lock()
@@ -334,7 +331,6 @@ final class ChunkWorld {
         }
     }
 
-
     func renderToBuffer(
         buffer: inout [UInt8],
         width: Int,
@@ -388,7 +384,6 @@ final class ChunkWorld {
             }
         }
     }
-
 
     struct Snapshot: Codable {
         var seedHigh: UInt64

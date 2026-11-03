@@ -21,7 +21,7 @@ final class WallpaperView: MTKView {
 
     private func commonInit() {
         guard let device else {
-            NSLog("InfiniteLife: Metalデバイスが見つかりません")
+            NSLog("InfiniteLife: No Metal device available")
             return
         }
         self.device = device

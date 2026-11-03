@@ -152,7 +152,6 @@ final class SimulationEngine {
         recomputeTargetFPS()
     }
 
-
     @discardableResult
     func addFrameListener(_ block: @escaping (UnsafePointer<UInt8>, Int, Int, CGFloat) -> Void) -> UUID {
         let id = UUID()
@@ -177,7 +176,6 @@ final class SimulationEngine {
         }
         listenerLock.unlock()
     }
-
 
     private func startDisplayLink() {
         var link: CVDisplayLink?

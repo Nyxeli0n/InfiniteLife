@@ -139,7 +139,6 @@ final class StatusBarController {
         statusItem.menu = menu
     }
 
-
     @objc private func toggleRun() {
         engine.toggleRunning()
         settings.update { $0.isRunning = engine.running }

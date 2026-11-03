@@ -18,7 +18,7 @@ final class PreferencesViewController: NSViewController {
     }
 
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) は使用できません")
+        fatalError("init(coder:) is unavailable")
     }
 
     override func loadView() {
@@ -154,7 +154,6 @@ final class PreferencesViewController: NSViewController {
         engine.continuePreviousWorld()
         refreshFromSettings()
     }
-
 
     private func makeLabel(_ text: String, size: CGFloat, bold: Bool) -> NSTextField {
         let f = NSTextField(labelWithString: text)
