@@ -5,8 +5,7 @@ final class CameraController {
     private(set) var x: Double = 0
     private(set) var y: Double = 0
 
-    func reset(seed: WorldSeed, startX: Double = 0, startY: Double = 0) {
-        _ = seed
+    func reset(startX: Double = 0, startY: Double = 0) {
         x = startX
         y = startY
     }

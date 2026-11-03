@@ -33,7 +33,7 @@ final class SimulationEngine {
 
     private init() {
         world = ChunkWorld(seed: WorldSeed.random())
-        camera.reset(seed: world.seed)
+        camera.reset()
     }
 
     var running: Bool {
@@ -113,7 +113,7 @@ final class SimulationEngine {
         stateLock.unlock()
 
         world.reset(seed: seed, generation: 0)
-        camera.reset(seed: seed)
+        camera.reset()
         activity.configure(seed: seed, density: density, preset: preset)
         SettingsStore.shared.clearWorldSnapshot()
         SettingsStore.shared.update { s in

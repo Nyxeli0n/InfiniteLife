@@ -23,30 +23,9 @@ final class Chunk {
     }
 
     @inline(__always)
-    func index(_ x: Int, _ y: Int) -> Int {
-        y * Chunk.size + x
-    }
-
-    @inline(__always)
-    func get(_ x: Int, _ y: Int) -> UInt8 {
-        guard x >= 0, y >= 0, x < Chunk.size, y < Chunk.size else { return 0 }
-        return cells[y * Chunk.size + x]
-    }
-
-    @inline(__always)
     func set(_ x: Int, _ y: Int, _ value: UInt8) {
         guard x >= 0, y >= 0, x < Chunk.size, y < Chunk.size else { return }
         cells[y * Chunk.size + x] = value
-    }
-
-    func clear() {
-        for i in 0..<Chunk.cellCount {
-            cells[i] = 0
-            next[i] = 0
-        }
-        liveCount = 0
-        recentActivity = 0
-        stagnantSteps = 0
     }
 
     func recountLive() {

@@ -59,10 +59,6 @@ final class ChunkWorld {
     }
 
 
-    func ensureCoverage(worldRect: CGRect, density: Double) {
-        ensureCoverage(worldRects: [worldRect], density: density)
-    }
-
     func ensureCoverage(worldRects: [CGRect], density: Double) {
         guard !worldRects.isEmpty else { return }
 
